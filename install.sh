@@ -96,7 +96,7 @@ yum install -y mariadb-server mariadb-client
 mkdir -p /var/run/mariadb
 chown mysql:mysql /var/run/mariadb
 cp $INSTALLER/packages/server.cnf /etc/my.cnf.d/server.cnf
-systemctl enable mysql
+#### systemctl enable mysql
 systemctl start mysql
 
 echo "run mysql_secure_installation "
