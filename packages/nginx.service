@@ -1,0 +1,12 @@
+[Unit]
+Description=The nginx process manager
+After=network.target remote-fa.target nss-lookup.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/openresty/nginx/sbin/nginx
+ExecReload=/usr/local/openresty/nginx/sbin -s reload
+ExecStop=/usr/local/openresty/nginx/sbin -s stop
+
+[Install]
+WantedBy=multi-user.target
